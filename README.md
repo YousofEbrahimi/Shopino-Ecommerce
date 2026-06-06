@@ -1,7 +1,3 @@
-# README.md کامل و زیبا
-
-```markdown
-<!-- Banner -->
 <div align="center">
 
 # 🛒 Shopino Ecommerce
@@ -13,31 +9,19 @@
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/تورب-Torob_Integration-2d71e3?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIi8+PC9zdmc+" alt="Torob">
-  <img src="https://img.shields.io/badge/ریسپانسیو-Responsive-22c55e?style=for-the-badge" alt="Responsive">
-  <img src="https://img.shields.io/badge/بدون_سرور-No_Server-ef4444?style=for-the-badge" alt="No Server">
-  <img src="https://img.shields.io/badge/Farsi-Persian-059669?style=for-the-badge" alt="Farsi">
+  <img src="https://img.shields.io/badge/Torob_Integration-2d71e3?style=for-the-badge" alt="Torob">
+  <img src="https://img.shields.io/badge/Responsive-22c55e?style=for-the-badge" alt="Responsive">
+  <img src="https://img.shields.io/badge/No_Server-ef4444?style=for-the-badge" alt="No Server">
+  <img src="https://img.shields.io/badge/Farsi-059669?style=for-the-badge" alt="Farsi">
 </p>
 
 <br>
 
 **E-commerce templates with Torob price comparison integration**
 **قالب‌های فروشگاهی با قابلیت مقایسه قیمت از ترب**
-
-<br>
-
-```
-███████╗██╗  ██╗ ██████╗ ██████╗ ██╗███╗   ██╗ ██████╗
-██╔════╝██║  ██║██╔═══██╗██╔══██╗██║████╗  ██║██╔═══██╗
-███████╗███████║██║   ██║██████╔╝██║██╔██╗ ██║██║   ██║
-╚════██║██╔══██║██║   ██║██╔══██╗██║██║╚██╗██║██║   ██║
-███████║██║  ██║╚██████╔╝██║  ██║██║██║ ╚████║╚██████╔╝
-╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝
-```
 
 </div>
 
@@ -116,59 +100,6 @@
 
 ---
 
-## 🖼️ پیش‌نمایش
-
-<div align="center">
-
-### 🌙 قالب تاریک — دیجی‌مارکت
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  دیجی‌مارکت    🔍 جستجو...    🔗 ترب    🛒 سبد(3)         │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  🔥 پیشنهاد ویژه امروز                                     │
-│  بهترین قیمت‌ها رو با ترب مقایسه کنید                      │
-│  [ مشاهده محصولات ← ]                                      │
-│                                                             │
-│  📱 موبایل  💻 لپ‌تاپ  🎧 صوتی  📺 تلویزیون               │
-├──────────┬──────────┬──────────┬──────────┬                 │
-│  📱      │  📱      │  💻      │  🎧      │                 │
-│ Galaxy   │ آیفون    │ MacBook  │ سونی     │                 │
-│ S24      │ 15 Pro   │ Air M3   │ XM5      │                 │
-│ ۵۲,۹۹۰   │ ۷۲,۵۰۰   │ ۶۲,۹۹۰   │ ۱۴,۸۹۰   │                 │
-│ 🔗 ترب   │ 🔗 ترب   │ 🔗 ترب   │ 🔗 ترب   │                 │
-│[سبد خرید]│[سبد خرید]│[سبد خرید]│[سبد خرید]│                 │
-└──────────┴──────────┴──────────┴──────────┘                 │
-```
-
-<br>
-
-### ☀️ قالب روشن — شاپینو
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  S شاپینو   🔍 جستجو   خانه محصولات تخفیف   🔗 ترب  🛒    │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  خرید هوشمند با مقایسه قیمت ترب                            │
-│  [مشاهده محصولات ←]    │ 🔗 ترب  │ 🏷️ تخفیف                │
-│                         │ یکپارچه │ ویژه                    │
-├────────┬────────────────┼─────────┼─────────────────────────┤
-│ دسته   │ 📱  💻  🎧  📺 │         │                         │
-│ بندی   │ Galaxy  آیفون   │ sort ▼  │                         │
-│ قیمت   │ ۵۲,۹۹۰  ۷۲,۵۰۰ │        │                         │
-│        │ 🔗 ترب  🔗 ترب  │         │                         │
-│ 🔗ترب  │[افزودن] [افزودن]│         │                         │
-└────────┴────────────────┴─────────┴─────────────────────────┘
-```
-
-</div>
-
-<br>
-
----
-
 ## 🔗 نحوه کار ترب
 
 <div align="center">
@@ -178,24 +109,24 @@
          │
          ▼
 ┌─────────────────────┐
-│   مودال ترب باز می‌شود   │
+│  مودال ترب باز می‌شود  │
 │                     │
-│   📱 Galaxy S24     │
-│   بهترین: ۵۱,۵۰۰,۰۰۰   │
-│   ۱۸ فروشنده             │
+│  📱 Galaxy S24      │
+│  بهترین: ۵۱,۵۰۰,۰۰۰  │
+│  ۱۸ فروشنده            │
 │                     │
-│   ┌───────────────┐ │
-│   │ تکنولایف      │ │ ← بهترین قیمت ✓
-│   │ ۵۱,۵۰۰,۰۰۰  │ │
-│   ├───────────────┤ │
-│   │ دیجی‌کالا     │ │
-│   │ ۵۲,۹۹۰,۰۰۰  │ │
-│   ├───────────────┤ │
-│   │ موبایل‌کو     │ │
-│   │ ۵۲,۲۰۰,۰۰۰  │ │
-│   └───────────────┘ │
+│  ┌───────────────┐  │
+│  │ تکنولایف      │  │ ← بهترین قیمت ✓
+│  │ ۵۱,۵۰۰,۰۰۰  │  │
+│  ├───────────────┤  │
+│  │ دیجی‌کالا     │  │
+│  │ ۵۲,۹۹۰,۰۰۰  │  │
+│  ├───────────────┤  │
+│  │ موبایل‌کو     │  │
+│  │ ۵۲,۲۰۰,۰۰۰  │  │
+│  └───────────────┘  │
 │                     │
-│   [مشاهده در ترب]    │
+│  [مشاهده در ترب]     │
 └─────────────────────┘
 ```
 
@@ -209,13 +140,13 @@
 
 <div align="center">
 
-| تکنولوژی | نسخه | کاربرد |
-|:---:|:---:|:---|
-| **HTML5** | — | ساختار صفحات |
-| **CSS3** | — | Grid, Flexbox, Custom Properties, Animations |
-| **JavaScript** | ES6+ | منطق برنامه, تعاملات |
-| **localStorage** | — | ذخیره سبد خرید |
-| **Google Fonts** | — | Vazirmatn, DM Mono |
+| تکنولوژی | کاربرد |
+|:---:|:---|
+| **HTML5** | ساختار صفحات |
+| **CSS3** | Grid, Flexbox, Custom Properties, Animations |
+| **JavaScript** | ES6+ — منطق برنامه و تعاملات |
+| **localStorage** | ذخیره‌سازی سبد خرید |
+| **Google Fonts** | Vazirmatn, DM Mono |
 
 </div>
 
@@ -340,22 +271,6 @@ open index.html
 
 ---
 
-## 📄 License
-
-<div align="center">
-
-این پروژه تحت لایسنس **MIT** منتشر شده است.
-
-<br>
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-</div>
-
-<br>
-
----
-
 ## 🙏 تشکر ویژه
 
 <div align="center">
@@ -372,35 +287,4 @@ open index.html
 
 **ساخته شده با ❤️ برای جامعه فارسی‌زبان**
 
-<br>
-
-<p>
-  <img src="https://img.shields.io/badge/⭐_Star-Repo-yellow?style=for-the-badge" alt="Star">
-  <img src="https://img.shields.io/badge/🍴_Fork-Repo-orange?style=for-the-badge" alt="Fork">
-  <img src="https://img.shields.io/badge/📢_Share-Green?style=for-the-badge" alt="Share">
-</p>
-
 </div>
-```
-
----
-
-## این README شامل:
-
-| عنصر | توضیح |
-|------|-------|
-| **بنر بالا** | ASCII Art + Badge‌ها |
-| **جدول دمو** | لینک به هر دو قالب |
-| **ویژگی‌ها** | جدول ۴ بخشی |
-| **پیش‌نمایش** | ASCII wireframe هر قالب |
-| **نمودار ترب** | فلوچارت نحوه کار |
-| **تکنولوژی‌ها** | جدول با آیکون |
-| **ساختار پروژه** | درخت فایل‌ها |
-| **راه‌اندازی** | آنلاین + لوکال |
-| **ریسپانسیو** | جدول breakpoint |
-| **محصولات** | جدول ۱۲ تایی |
-| **مشارکت** | راهنمای PR |
-| **لایسنس** | MIT Badge |
-| **تشکر** | لینک‌ها |
-
-فقط کافیه محتوای فعلی `README.md` رو پاک کنی و این رو بذاری و **Commit** بزنی.
