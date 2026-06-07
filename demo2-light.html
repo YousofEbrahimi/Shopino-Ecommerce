@@ -20,13 +20,12 @@
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Vazirmatn',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body.modal-open{overflow:hidden}
+body.modal-open{position:fixed;width:100%;height:100%}
 .num{font-family:'DM Mono',monospace;direction:ltr;display:inline-block}
 a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 .container{max-width:1280px;margin:0 auto;padding:0 20px}
 
-/* ===== HEADER ===== */
 .header{position:sticky;top:0;z-index:100;background:rgba(248,250,251,.9);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .header-inner{display:flex;align-items:center;gap:16px;height:64px}
 .logo{font-weight:900;font-size:20px;white-space:nowrap;display:flex;align-items:center;gap:8px;flex-shrink:0}
@@ -45,11 +44,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .h-btn:hover{background:var(--surface2);color:var(--text)}
 .h-btn svg{width:20px;height:20px}
 .h-badge{position:absolute;top:4px;left:4px;min-width:16px;height:16px;background:var(--accent);color:#fff;border-radius:8px;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 4px}
+@keyframes badgePulse{0%{transform:scale(1)}50%{transform:scale(1.3)}100%{transform:scale(1)}}
+.h-badge.pulse{animation:badgePulse .3s ease}
 .torob-badge{display:flex;align-items:center;gap:5px;padding:6px 12px;background:var(--torob-dim);border:1px solid var(--torob-light);border-radius:8px;font-size:11px;font-weight:600;color:var(--torob);transition:all .2s}
 .torob-badge:hover{background:var(--torob-light)}
 .torob-dot{width:8px;height:8px;background:var(--torob);border-radius:50%}
 
-/* ===== HERO ===== */
 .hero{padding:32px 0}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .hero-main{background:linear-gradient(135deg,var(--accent),#047857);border-radius:18px;padding:40px 36px;color:#fff;position:relative;overflow:hidden;min-height:220px;display:flex;flex-direction:column;justify-content:center}
@@ -65,7 +65,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .hero-card-sm h3{font-size:18px;font-weight:800;margin-bottom:6px}
 .hero-card-sm p{font-size:12px;opacity:.85}
 
-/* ===== TOROB INFO BAR ===== */
 .torob-bar{margin:24px 0 16px;padding:16px 20px;background:var(--surface);border:1px solid var(--border);border-radius:14px;display:flex;align-items:center;gap:16px;box-shadow:var(--shadow)}
 .torob-bar-icon{width:44px;height:44px;background:var(--torob);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .torob-bar-icon svg{width:22px;height:22px;color:#fff}
@@ -75,9 +74,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .torob-bar-btn{padding:10px 20px;background:var(--torob);color:#fff;border-radius:10px;font-size:12px;font-weight:700;transition:all .2s;flex-shrink:0}
 .torob-bar-btn:hover{filter:brightness(1.1)}
 
-/* ===== PRODUCTS ===== */
 .main-layout{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:0 0 48px}
-/* Sidebar */
 .sidebar{position:sticky;top:80px;align-self:start}
 .sidebar-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:var(--shadow)}
 .sidebar-card h4{font-size:13px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:6px;color:var(--text-sec)}
@@ -86,13 +83,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .cat-item:hover{background:var(--surface2);color:var(--text)}
 .cat-item.active{background:var(--accent-dim);color:var(--accent);font-weight:600}
 .cat-count{font-size:10px;color:var(--text-muted);background:var(--surface2);padding:2px 7px;border-radius:6px}
-/* Price Filter */
 .price-range{margin-top:8px}
 .price-range label{font-size:11px;color:var(--text-muted);display:block;margin-bottom:6px}
 .range-slider{-webkit-appearance:none;width:100%;height:4px;background:var(--surface3);border-radius:4px;outline:none}
 .range-slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;background:var(--accent);border-radius:50%;cursor:pointer;border:3px solid var(--surface);box-shadow:var(--shadow)}
 .range-val{font-size:12px;font-weight:600;color:var(--accent);text-align:center;margin-top:6px}
-/* Torob Widget */
 .torob-widget{background:linear-gradient(135deg,var(--torob-dim),transparent);border:1px solid var(--torob-light);border-radius:var(--radius);padding:16px;text-align:center}
 .torob-widget .t-icon{width:40px;height:40px;background:var(--torob);border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center}
 .torob-widget .t-icon svg{width:20px;height:20px;color:#fff}
@@ -101,7 +96,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .torob-widget a{display:inline-block;margin-top:10px;padding:8px 16px;background:var(--torob);color:#fff;border-radius:8px;font-size:11px;font-weight:700;transition:all .2s}
 .torob-widget a:hover{filter:brightness(1.1)}
 
-/* Products Area */
 .prod-area .prod-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
 .prod-area h2{font-size:18px;font-weight:800}
 .prod-count{font-size:12px;color:var(--text-muted)}
@@ -110,7 +104,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .sort-btn:hover{border-color:var(--accent);color:var(--accent)}
 .sort-btn.active{background:var(--accent-dim);border-color:var(--accent);color:var(--accent);font-weight:600}
 .p-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.p-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .25s;box-shadow:var(--shadow)}
+.p-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .25s;box-shadow:var(--shadow);will-change:transform}
 .p-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
 .p-card-top{padding:16px;display:flex;align-items:center;justify-content:center;height:160px;position:relative}
 .p-emoji{font-size:56px}
@@ -128,7 +122,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .p-new-price .t{font-size:10px;font-weight:500;color:var(--text-muted)}
 .p-old-price{font-size:12px;color:var(--text-muted);text-decoration:line-through}
 .p-disc-pct{font-size:10px;font-weight:700;color:var(--red);background:var(--red-dim);padding:2px 6px;border-radius:4px}
-/* Inline Torob Widget */
 .p-torob-inline{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--torob-dim);border:1px solid var(--torob-light);border-radius:8px;margin-bottom:10px;cursor:pointer;transition:all .2s}
 .p-torob-inline:hover{background:var(--torob-light)}
 .p-torob-logo{width:22px;height:22px;background:var(--torob);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -139,7 +132,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .p-torob-price{font-size:12px;font-weight:700;color:var(--torob);font-family:'DM Mono',monospace;direction:ltr;flex-shrink:0}
 .p-torob-arrow{color:var(--text-muted);flex-shrink:0}
 .p-torob-arrow svg{width:14px;height:14px}
-/* Actions */
 .p-btns{display:flex;gap:6px}
 .btn-add{flex:1;height:38px;background:var(--accent);color:#fff;border-radius:10px;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:4px;transition:all .2s}
 .btn-add:hover{filter:brightness(1.1)}
@@ -148,7 +140,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .btn-icon:hover{border-color:var(--accent);color:var(--accent)}
 .btn-icon svg{width:16px;height:16px}
 
-/* ===== CART DROPDOWN ===== */
 .cart-dropdown{position:absolute;top:calc(100% + 8px);left:0;width:360px;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.12);display:none;z-index:200;overflow:hidden}
 .cart-dropdown.open{display:block}
 .cd-head{padding:14px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
@@ -174,7 +165,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .cd-checkout{padding:10px 20px;background:var(--accent);color:#fff;border-radius:10px;font-size:12px;font-weight:700;transition:all .2s}
 .cd-checkout:hover{filter:brightness(1.1)}
 
-/* ===== TOROB MODAL ===== */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:300;display:none;align-items:center;justify-content:center;padding:16px}
 .modal-overlay.open{display:flex}
 .modal{background:var(--surface);border-radius:18px;width:100%;max-width:520px;max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.15)}
@@ -208,24 +198,23 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .torob-close-btn{background:var(--surface2);color:var(--text-sec);border:1px solid var(--border)}
 .torob-close-btn:hover{color:var(--text);border-color:var(--text-muted)}
 
-/* ===== TOAST ===== */
-.toast-wrap{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:500;pointer-events:none}
-.toast{padding:10px 22px;background:var(--accent);color:#fff;border-radius:10px;font-size:12px;font-weight:600;animation:tIn .3s ease forwards;pointer-events:auto;box-shadow:0 4px 20px var(--accent-glow)}
+.toast-wrap{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:500;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
+.toast{padding:10px 22px;background:var(--accent);color:#fff;border-radius:10px;font-size:12px;font-weight:600;animation:tIn .3s ease forwards;pointer-events:auto;box-shadow:0 4px 20px var(--accent-glow);white-space:nowrap;text-align:center}
+.toast.error{background:var(--red);box-shadow:0 4px 20px rgba(220,38,38,.3)}
 .toast.out{animation:tOut .3s ease forwards}
 @keyframes tIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes tOut{to{opacity:0;transform:translateY(16px)}}
 
-/* ===== FOOTER ===== */
 .footer{border-top:1px solid var(--border);padding:36px 0 20px;background:var(--surface)}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;margin-bottom:28px}
-.footer-brand .logo{margin-bottom:10px}.footer-brand p{font-size:12px;color:var(--text-muted);line-height:1.8;max-width:280px}
+.footer-brand .logo{margin-bottom:10px}
+.footer-brand p{font-size:12px;color:var(--text-muted);line-height:1.8;max-width:280px}
 .f-col h5{font-size:12px;font-weight:700;margin-bottom:12px;color:var(--text-sec)}
 .f-col a{display:block;font-size:11px;color:var(--text-muted);padding:3px 0;transition:color .2s}
 .f-col a:hover{color:var(--accent)}
 .footer-bottom{border-top:1px solid var(--border);padding-top:16px;display:flex;align-items:center;justify-content:space-between;font-size:10px;color:var(--text-muted)}
 .footer-bottom .torob-f{color:var(--torob);font-weight:600}
 
-/* ===== RESPONSIVE ===== */
 @media(max-width:1024px){.main-layout{grid-template-columns:1fr}.sidebar{display:none}.p-grid{grid-template-columns:repeat(2,1fr)}.hero-grid{grid-template-columns:1fr}.hero-side{flex-direction:row}.footer-top{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){
   .p-grid{grid-template-columns:1fr;max-width:380px;margin:0 auto}
@@ -241,10 +230,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <div class="container header-inner">
-    <a href="#" class="logo"><div class="logo-icon">S</div> شاپینو</a>
+    <a href="index.html" class="logo"><div class="logo-icon">S</div> شاپینو</a>
     <div class="search-wrap">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input type="text" id="searchInput" placeholder="جستجو..." autocomplete="off">
@@ -270,7 +258,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-grid">
@@ -293,7 +280,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<!-- TOROB BAR -->
 <div class="container">
   <div class="torob-bar">
     <div class="torob-bar-icon"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg></div>
@@ -302,11 +288,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </div>
 
-<!-- MAIN LAYOUT -->
 <div class="container" id="products">
   <div class="main-layout">
-
-    <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-card">
         <h4>📂 دسته‌بندی</h4>
@@ -335,7 +318,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       </div>
     </aside>
 
-    <!-- PRODUCTS -->
     <div class="prod-area">
       <div class="prod-head">
         <div><h2>محصولات</h2><span class="prod-count" id="prodCount"></span></div>
@@ -351,7 +333,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-top">
@@ -364,7 +345,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </footer>
 
-<!-- TOROB MODAL -->
 <div class="modal-overlay" id="torobModal">
   <div class="modal">
     <div class="modal-head"><h3><span class="tl"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg></span> مقایسه قیمت</h3><button class="modal-close" id="modalClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
@@ -372,13 +352,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </div>
 
-<!-- TOAST -->
 <div class="toast-wrap" id="toastWrap"></div>
 
 <script>
 const fmt=n=>n.toLocaleString('fa-IR');
 const esc=s=>{const d=document.createElement('div');d.textContent=s;return d.innerHTML};
-const CAT_NAMES={all:'همه',mobile:'موبایل',laptop:'لپ‌تاپ',audio:'صوتی',tv:'تلویزیون',tablet:'تبلت',watch:'ساعت',accessory:'لوازم جانبی'};
 
 const PRODUCTS=[
   {id:1,name:'گوشی سامسونگ Galaxy S24 Ultra',cat:'mobile',price:52990000,old:58990000,rating:4.7,reviews:234,img:'📱',
@@ -404,7 +382,7 @@ class Cart{
   constructor(){this.items=[];this.load()}
   load(){try{this.items=JSON.parse(localStorage.getItem('sp_cart'))||[]}catch(e){this.items=[]}}
   save(){localStorage.setItem('sp_cart',JSON.stringify(this.items))}
-  add(id){const ex=this.items.find(i=>i.id===id);if(ex)ex.qty++;else this.items.push({id,qty:1});this.save();this.render()}
+  add(id){const ex=this.items.find(i=>i.id===id);if(ex)ex.qty++;else this.items.push({id,qty:1});this.save();this.render();const badge=document.getElementById('cartBadge');if(badge){badge.classList.remove('pulse');void badge.offsetWidth;badge.classList.add('pulse')}}
   remove(id){this.items=this.items.filter(i=>i.id!==id);this.save();this.render()}
   qty(id,d){const it=this.items.find(i=>i.id===id);if(!it)return;it.qty+=d;if(it.qty<=0)this.remove(id);else{this.save();this.render()}}
   total(){return this.items.reduce((s,i)=>{const p=PRODUCTS.find(x=>x.id===i.id);return s+(p?p.price*i.qty:0)},0)}
@@ -415,9 +393,10 @@ class Cart{
     const totalEl=document.getElementById('cdTotal');
     const countEl=document.getElementById('cdCount');
     badge.textContent=this.count();countEl.textContent=fmt(this.count())+' کالا';
-    if(!this.items.length){box.innerHTML='<div class="cd-empty">سبد خالی است</div>';totalEl.textContent='۰';return}
+    if(!this.items.length){box.innerHTML='<div class="cd-empty">سبد خالی است</div>';totalEl.textContent='۰';renderProducts();return}
     box.innerHTML=this.items.map(i=>{const p=PRODUCTS.find(x=>x.id===i.id);if(!p)return'';return'<div class="cd-item"><div class="cd-img">'+p.img+'</div><div class="cd-info"><div class="cd-name">'+esc(p.name)+'</div><div class="cd-price num">'+fmt(p.price)+'</div><div class="cd-qty"><button onclick="event.stopPropagation();cart.qty('+p.id+',-1)">−</button><span>'+i.qty+'</span><button onclick="event.stopPropagation();cart.qty('+p.id+',1)">+</button></div></div><button class="cd-del" onclick="event.stopPropagation();cart.remove('+p.id+')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>'}).join('');
     totalEl.innerHTML='<span class="num">'+fmt(this.total())+'</span>';
+    renderProducts();
   }
 }
 const cart=new Cart();
@@ -460,21 +439,49 @@ function updateCatCounts(){
 /* Torob Modal */
 function openTorob(id){
   const p=PRODUCTS.find(x=>x.id===id);if(!p)return;
-  document.getElementById('modalBody').innerHTML='<div class="torob-p-head"><div class="torob-p-icon">'+p.img+'</div><div class="torob-p-det"><h4>'+esc(p.name)+'</h4><div class="bp"><span class="num">'+fmt(p.torob.best)+'</span> <span class="t">تومان</span></div><div class="sc">'+p.torob.sellers+' فروشنده در ترب</div></div></div><div class="torob-sellers-title">فروشندگان</div>'+p.torob.items.map(s=>'<div class="s-row'+(s.best?' best':'')+'"><span class="s-name">'+esc(s.name)+'</span><span class="s-stars">'+s.rating+' ★</span><span class="s-price num">'+fmt(s.price)+'</span>'+(s.best?'<span class="s-best-tag">بهترین</span>':'')+'</div>').join('')+'<div class="torob-modal-btns"><a href="https://torob.com/search/?query='+encodeURIComponent(p.name)+'" target="_blank" class="torob-go-btn">مشاهده در ترب</a><button class="torob-close-btn" onclick="document.getElementById(\'torobModal\').classList.remove(\'open\');document.body.classList.remove(\'modal-open\')">بستن</button></div>';
+  document.getElementById('modalBody').innerHTML='<div class="torob-p-head"><div class="torob-p-icon">'+p.img+'</div><div class="torob-p-det"><h4>'+esc(p.name)+'</h4><div class="bp"><span class="num">'+fmt(p.torob.best)+'</span> <span class="t">تومان</span></div><div class="sc">'+p.torob.sellers+' فروشنده در ترب</div></div></div><div class="torob-sellers-title">فروشندگان</div>'+p.torob.items.map(s=>'<div class="s-row'+(s.best?' best':'')+'"><span class="s-name">'+esc(s.name)+'</span><span class="s-stars">'+s.rating+' ★</span><span class="s-price num">'+fmt(s.price)+'</span>'+(s.best?'<span class="s-best-tag">بهترین</span>':'')+'</div>').join('')+'<div class="torob-modal-btns"><a href="https://torob.com/search/?query='+encodeURIComponent(p.name)+'" target="_blank" class="torob-go-btn">مشاهده در ترب</a><button class="torob-close-btn" onclick="closeTorobModal()">بستن</button></div>';
   document.getElementById('torobModal').classList.add('open');document.body.classList.add('modal-open');
 }
+function closeTorobModal(){document.getElementById('torobModal').classList.remove('open');document.body.classList.remove('modal-open')}
+function closeCartDropdown(){document.getElementById('cartDropdown').classList.remove('open')}
 
 /* Events */
 document.getElementById('cartBtn').onclick=e=>{e.stopPropagation();document.getElementById('cartDropdown').classList.toggle('open')};
-document.addEventListener('click',e=>{if(!e.target.closest('#cartBtn'))document.getElementById('cartDropdown').classList.remove('open')});
-document.getElementById('modalClose').onclick=()=>{document.getElementById('torobModal').classList.remove('open');document.body.classList.remove('modal-open')};
-document.getElementById('torobModal').onclick=e=>{if(e.target===document.getElementById('torobModal')){document.getElementById('torobModal').classList.remove('open');document.body.classList.remove('modal-open')}};
+document.addEventListener('click',e=>{if(!e.target.closest('#cartBtn'))closeCartDropdown()});
+document.getElementById('modalClose').onclick=closeTorobModal;
+document.getElementById('torobModal').onclick=e=>{if(e.target===document.getElementById('torobModal'))closeTorobModal()};
 document.querySelectorAll('.cat-item').forEach(c=>{c.onclick=()=>{currentCat=c.dataset.cat;document.querySelectorAll('.cat-item').forEach(x=>x.classList.toggle('active',x===c));renderProducts()}});
 document.querySelectorAll('.sort-btn').forEach(b=>{b.onclick=()=>{sortBy=b.dataset.sort;document.querySelectorAll('.sort-btn').forEach(x=>x.classList.toggle('active',x===b));renderProducts()}});
-document.getElementById('searchInput').oninput=e=>{searchTerm=e.target.value.trim();renderProducts()};
 document.getElementById('priceRange').oninput=e=>{maxPrice=+e.target.value;document.getElementById('priceVal').innerHTML='<span class="num">'+fmt(maxPrice)+'</span> تومان';renderProducts()};
 
-function toast(msg){const el=document.createElement('div');el.className='toast';el.textContent=msg;document.getElementById('toastWrap').appendChild(el);setTimeout(()=>{el.classList.add('out');setTimeout(()=>el.remove(),300)},2000)}
+/* Search with debounce */
+let debounceTimer;
+document.getElementById('searchInput').oninput=e=>{clearTimeout(debounceTimer);debounceTimer=setTimeout(()=>{searchTerm=e.target.value.trim();renderProducts()},300)};
+
+/* Checkout */
+document.querySelector('.cd-checkout').onclick=e=>{
+  e.stopPropagation();
+  if(!cart.items.length){toast('سبد خرید خالی است!');return}
+  toast('سفارش شما با موفقیت ثبت شد!');
+  cart.items=[];cart.save();cart.render();closeCartDropdown();
+};
+
+/* Toast with limit */
+function toast(msg){
+  const box=document.getElementById('toastWrap');
+  const existing=box.querySelectorAll('.toast:not(.out)');
+  if(existing.length>=3){existing[0].classList.add('out');setTimeout(()=>existing[0].remove(),300)}
+  const el=document.createElement('div');el.className='toast';el.textContent=msg;box.appendChild(el);
+  setTimeout(()=>{el.classList.add('out');setTimeout(()=>el.remove(),300)},2000);
+}
+
+/* ESC Key */
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    if(document.getElementById('torobModal').classList.contains('open'))closeTorobModal();
+    if(document.getElementById('cartDropdown').classList.contains('open'))closeCartDropdown();
+  }
+});
 
 updateCatCounts();renderProducts();cart.render();
 </script>
