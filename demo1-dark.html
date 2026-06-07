@@ -20,14 +20,12 @@
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Vazirmatn',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body.cart-open{overflow:hidden}
+body.cart-open,body.modal-open{position:fixed;width:100%;height:100%}
 .num{font-family:'DM Mono',monospace;direction:ltr;display:inline-block}
 a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
-img{max-width:100%;display:block}
 .container{max-width:1280px;margin:0 auto;padding:0 20px}
 
-/* ===== HEADER ===== */
 .header{position:sticky;top:0;z-index:100;background:rgba(11,17,32,.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
 .header-inner{display:flex;align-items:center;gap:16px;height:68px}
 .logo{font-weight:900;font-size:22px;white-space:nowrap;flex-shrink:0}
@@ -42,11 +40,12 @@ img{max-width:100%;display:block}
 .h-btn:hover{background:var(--surface2);color:var(--text)}
 .h-btn svg{width:22px;height:22px}
 .h-badge{position:absolute;top:4px;left:4px;min-width:18px;height:18px;background:var(--accent);color:#fff;border-radius:9px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 5px}
+@keyframes badgePulse{0%{transform:scale(1)}50%{transform:scale(1.3)}100%{transform:scale(1)}}
+.h-badge.pulse{animation:badgePulse .3s ease}
 .torob-link{display:flex;align-items:center;gap:6px;padding:8px 14px;background:var(--torob-dim);border:1px solid rgba(45,113,227,.2);border-radius:10px;color:#60a5fa;font-size:12px;font-weight:600;transition:all .2s;white-space:nowrap}
 .torob-link:hover{background:rgba(45,113,227,.2);border-color:var(--torob)}
 .torob-link svg{width:16px;height:16px}
 
-/* ===== HERO ===== */
 .hero{padding:48px 0 32px}
 .hero-card{background:linear-gradient(135deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--border);border-radius:20px;padding:48px;position:relative;overflow:hidden;min-height:280px;display:flex;align-items:center}
 .hero-card::before{content:'';position:absolute;top:-50%;left:-20%;width:600px;height:600px;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 70%);pointer-events:none;opacity:.4}
@@ -59,7 +58,6 @@ img{max-width:100%;display:block}
 .hero-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px var(--accent-glow)}
 .hero-art{position:absolute;left:40px;bottom:0;width:280px;height:280px;display:flex;align-items:center;justify-content:center;font-size:140px;opacity:.3;filter:grayscale(.2)}
 
-/* ===== CATEGORIES ===== */
 .cats{padding:16px 0 24px}
 .cat-scroll{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:4px 0}
 .cat-scroll::-webkit-scrollbar{display:none}
@@ -68,13 +66,12 @@ img{max-width:100%;display:block}
 .cat-chip.active{background:var(--accent-dim);border-color:var(--accent);color:var(--accent)}
 .cat-chip .emoji{font-size:18px}
 
-/* ===== PRODUCTS ===== */
 .products{padding:8px 0 48px}
 .sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
 .sec-head h2{font-size:20px;font-weight:800}
 .sec-head .count{color:var(--text-muted);font-size:13px}
 .p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.p-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .3s;position:relative}
+.p-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .3s;position:relative;will-change:transform}
 .p-card:hover{border-color:rgba(255,255,255,.12);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
 .p-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:72px;position:relative;overflow:hidden}
 .p-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--surface) 0%,transparent 40%)}
@@ -106,7 +103,6 @@ img{max-width:100%;display:block}
 .btn-fav:hover{border-color:var(--red);color:var(--red)}
 .btn-fav svg{width:18px;height:18px}
 
-/* ===== TOROB WIDGET ===== */
 .torob-sec{padding:32px 0 48px}
 .torob-banner{background:linear-gradient(135deg,rgba(45,113,227,.15),rgba(45,113,227,.05));border:1px solid rgba(45,113,227,.2);border-radius:20px;padding:32px 36px;display:flex;align-items:center;gap:32px}
 .torob-banner-icon{width:72px;height:72px;background:var(--torob);border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -116,7 +112,6 @@ img{max-width:100%;display:block}
 .torob-banner-btn{padding:12px 24px;background:var(--torob);color:#fff;border-radius:12px;font-size:13px;font-weight:700;transition:all .2s;white-space:nowrap;flex-shrink:0;margin-right:auto}
 .torob-banner-btn:hover{filter:brightness(1.15);transform:translateY(-2px)}
 
-/* ===== FOOTER ===== */
 .footer{border-top:1px solid var(--border);padding:40px 0 24px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
 .footer-brand .logo{font-size:20px;margin-bottom:12px}
@@ -126,7 +121,6 @@ img{max-width:100%;display:block}
 .footer-col a:hover{color:var(--accent)}
 .footer-bottom{border-top:1px solid var(--border);padding-top:20px;display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--text-muted)}
 
-/* ===== CART SIDEBAR ===== */
 .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:none;opacity:0;transition:opacity .3s}
 .cart-overlay.open{display:block;opacity:1}
 .cart-sidebar{position:fixed;top:0;left:0;width:400px;max-width:90vw;height:100vh;background:var(--surface);z-index:201;transform:translateX(-100%);transition:transform .35s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column}
@@ -157,7 +151,6 @@ img{max-width:100%;display:block}
 .cart-checkout{width:100%;height:48px;background:var(--accent);color:#fff;border-radius:12px;font-size:14px;font-weight:700;transition:all .2s}
 .cart-checkout:hover{filter:brightness(1.1)}
 
-/* ===== TOROB MODAL ===== */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;display:none;align-items:center;justify-content:center;padding:20px}
 .modal-overlay.open{display:flex}
 .modal{background:var(--surface);border:1px solid var(--border);border-radius:20px;width:100%;max-width:560px;max-height:80vh;overflow-y:auto}
@@ -189,14 +182,13 @@ img{max-width:100%;display:block}
 .torob-close-btn{background:var(--surface2);color:var(--text-sec);border:1px solid var(--border)}
 .torob-close-btn:hover{color:var(--text);border-color:rgba(255,255,255,.15)}
 
-/* ===== TOAST ===== */
 .toast-box{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:500;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
-.toast{padding:12px 24px;background:var(--green);color:#fff;border-radius:12px;font-size:13px;font-weight:600;animation:tIn .35s ease forwards;pointer-events:auto;box-shadow:0 8px 32px rgba(34,197,94,.3)}
+.toast{padding:12px 24px;background:var(--green);color:#fff;border-radius:12px;font-size:13px;font-weight:600;animation:tIn .35s ease forwards;pointer-events:auto;box-shadow:0 8px 32px rgba(34,197,94,.3);white-space:nowrap;text-align:center}
+.toast.error{background:var(--red);box-shadow:0 8px 32px rgba(239,68,68,.3)}
 .toast.out{animation:tOut .3s ease forwards}
 @keyframes tIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes tOut{to{opacity:0;transform:translateY(20px)}}
 
-/* ===== RESPONSIVE ===== */
 @media(max-width:1024px){.p-grid{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){
   .p-grid{grid-template-columns:repeat(2,1fr)}
@@ -219,10 +211,9 @@ img{max-width:100%;display:block}
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <div class="container header-inner">
-    <a href="#" class="logo">دیجی<span>مارکت</span></a>
+    <a href="index.html" class="logo">دیجی<span>مارکت</span></a>
     <div class="search-box">
       <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input type="text" id="searchInput" placeholder="جستجوی محصولات..." autocomplete="off">
@@ -238,7 +229,6 @@ img{max-width:100%;display:block}
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-card">
@@ -253,7 +243,6 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- CATEGORIES -->
 <section class="cats">
   <div class="container">
     <div class="cat-scroll" id="catScroll">
@@ -269,7 +258,6 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- PRODUCTS -->
 <section class="products" id="products">
   <div class="container">
     <div class="sec-head">
@@ -280,7 +268,6 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- TOROB SECTION -->
 <section class="torob-sec">
   <div class="container">
     <div class="torob-banner">
@@ -294,7 +281,6 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -313,7 +299,6 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<!-- CART SIDEBAR -->
 <div class="cart-overlay" id="cartOverlay"></div>
 <div class="cart-sidebar" id="cartSidebar">
   <div class="cart-head"><h3>سبد خرید</h3><button class="cart-close" id="cartClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
@@ -324,7 +309,6 @@ img{max-width:100%;display:block}
   </div>
 </div>
 
-<!-- TOROB MODAL -->
 <div class="modal-overlay" id="torobModal">
   <div class="modal">
     <div class="modal-head">
@@ -335,7 +319,6 @@ img{max-width:100%;display:block}
   </div>
 </div>
 
-<!-- TOAST -->
 <div class="toast-box" id="toastBox"></div>
 
 <script>
@@ -374,7 +357,7 @@ class Cart{
   constructor(){this.items=[];this.load()}
   load(){try{this.items=JSON.parse(localStorage.getItem('dm_cart'))||[]}catch(e){this.items=[]}}
   save(){localStorage.setItem('dm_cart',JSON.stringify(this.items))}
-  add(id){const ex=this.items.find(i=>i.id===id);if(ex)ex.qty++;else this.items.push({id,qty:1});this.save();this.render()}
+  add(id){const ex=this.items.find(i=>i.id===id);if(ex)ex.qty++;else this.items.push({id,qty:1});this.save();this.render();const badge=document.getElementById('cartBadge');if(badge){badge.classList.remove('pulse');void badge.offsetWidth;badge.classList.add('pulse')}}
   remove(id){this.items=this.items.filter(i=>i.id!==id);this.save();this.render()}
   qty(id,d){const it=this.items.find(i=>i.id===id);if(!it)return;it.qty+=d;if(it.qty<=0)this.remove(id);else{this.save();this.render()}}
   total(){return this.items.reduce((s,i)=>{const p=PRODUCTS.find(x=>x.id===i.id);return s+(p?p.price*i.qty:0)},0)}
@@ -384,15 +367,18 @@ class Cart{
     const badge=document.getElementById('cartBadge');
     const totalEl=document.getElementById('cartTotal');
     badge.textContent=this.count();
-    if(!this.items.length){box.innerHTML='<div class="cart-empty">سبد خرید خالی است</div>';totalEl.textContent='۰ تومان';return}
+    if(!this.items.length){box.innerHTML='<div class="cart-empty">سبد خرید خالی است</div>';totalEl.textContent='۰ تومان';renderProducts();return}
     box.innerHTML=this.items.map(i=>{const p=PRODUCTS.find(x=>x.id===i.id);if(!p)return'';return'<div class="cart-item"><div class="ci-img">'+p.img+'</div><div class="ci-info"><div class="ci-name">'+esc(p.name)+'</div><div class="ci-price num">'+fmt(p.price)+' <span style="font-size:10px;color:var(--text-muted);font-weight:400">تومان</span></div><div class="ci-qty"><button onclick="cart.qty('+p.id+',-1)">−</button><span>'+i.qty+'</span><button onclick="cart.qty('+p.id+',1)">+</button></div></div><button class="ci-remove" onclick="cart.remove('+p.id+')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>'}).join('');
     totalEl.innerHTML='<span class="num">'+fmt(this.total())+'</span> تومان';
+    renderProducts();
   }
 }
 const cart=new Cart();
 
-/* Products Render */
+/* State */
 let currentCat='all',searchTerm='';
+
+/* Render */
 function renderProducts(){
   let list=PRODUCTS.filter(p=>{
     if(currentCat!=='all'&&p.cat!==currentCat)return false;
@@ -415,22 +401,48 @@ function renderProducts(){
 function openTorob(id){
   const p=PRODUCTS.find(x=>x.id===id);if(!p)return;
   const body=document.getElementById('torobModalBody');
-  body.innerHTML='<div class="torob-product-info"><div class="torob-p-img">'+p.img+'</div><div class="torob-p-info"><h4>'+esc(p.name)+'</h4><div class="best-price"><span class="num">'+fmt(p.torob.best)+'</span> <span class="toman">تومان</span> — بهترین قیمت</div><div class="seller-count">'+p.torob.sellers+' فروشنده در ترب</div></div></div><div class="torob-sellers"><h4>فروشندگان</h4>'+p.torob.items.map(s=>'<div class="seller-row'+(s.best?' best':'')+'"><span class="seller-name">'+esc(s.name)+'</span><span class="seller-rating">'+s.rating+' ★</span><span class="seller-price num">'+fmt(s.price)+'</span>'+(s.best?'<span class="seller-badge">بهترین</span>':'')+'</div>').join('')+'</div><div class="torob-cta"><a href="https://torob.com/search/?query='+encodeURIComponent(p.name)+'" target="_blank" class="torob-go">مشاهده در ترب</a><button class="torob-close-btn" onclick="document.getElementById(\'torobModal\').classList.remove(\'open\')">بستن</button></div>';
+  body.innerHTML='<div class="torob-product-info"><div class="torob-p-img">'+p.img+'</div><div class="torob-p-info"><h4>'+esc(p.name)+'</h4><div class="best-price"><span class="num">'+fmt(p.torob.best)+'</span> <span class="toman">تومان</span> — بهترین قیمت</div><div class="seller-count">'+p.torob.sellers+' فروشنده در ترب</div></div></div><div class="torob-sellers"><h4>فروشندگان</h4>'+p.torob.items.map(s=>'<div class="seller-row'+(s.best?' best':'')+'"><span class="seller-name">'+esc(s.name)+'</span><span class="seller-rating">'+s.rating+' ★</span><span class="seller-price num">'+fmt(s.price)+'</span>'+(s.best?'<span class="seller-badge">بهترین</span>':'')+'</div>').join('')+'</div><div class="torob-cta"><a href="https://torob.com/search/?query='+encodeURIComponent(p.name)+'" target="_blank" class="torob-go">مشاهده در ترب</a><button class="torob-close-btn" onclick="closeTorobModal()">بستن</button></div>';
   document.getElementById('torobModal').classList.add('open');
+  document.body.classList.add('modal-open');
 }
+function closeTorobModal(){document.getElementById('torobModal').classList.remove('open');document.body.classList.remove('modal-open')}
+function closeCart(){document.getElementById('cartSidebar').classList.remove('open');document.getElementById('cartOverlay').classList.remove('open');document.body.classList.remove('cart-open')}
 
 /* Events */
 document.getElementById('cartBtn').onclick=()=>{document.getElementById('cartSidebar').classList.add('open');document.getElementById('cartOverlay').classList.add('open');document.body.classList.add('cart-open')};
-function closeCart(){document.getElementById('cartSidebar').classList.remove('open');document.getElementById('cartOverlay').classList.remove('open');document.body.classList.remove('cart-open')}
 document.getElementById('cartClose').onclick=closeCart;
 document.getElementById('cartOverlay').onclick=closeCart;
-document.getElementById('torobModalClose').onclick=()=>document.getElementById('torobModal').classList.remove('open');
-document.getElementById('torobModal').onclick=e=>{if(e.target===document.getElementById('torobModal'))document.getElementById('torobModal').classList.remove('open')};
-
+document.getElementById('torobModalClose').onclick=closeTorobModal;
+document.getElementById('torobModal').onclick=e=>{if(e.target===document.getElementById('torobModal'))closeTorobModal()};
 document.querySelectorAll('.cat-chip').forEach(c=>{c.onclick=()=>{currentCat=c.dataset.cat;document.querySelectorAll('.cat-chip').forEach(x=>x.classList.toggle('active',x===c));renderProducts()}});
-document.getElementById('searchInput').oninput=e=>{searchTerm=e.target.value.trim();renderProducts()};
 
-function toast(msg){const el=document.createElement('div');el.className='toast';el.textContent=msg;document.getElementById('toastBox').appendChild(el);setTimeout(()=>{el.classList.add('out');setTimeout(()=>el.remove(),300)},2000)}
+/* Search with debounce */
+let debounceTimer;
+document.getElementById('searchInput').oninput=e=>{clearTimeout(debounceTimer);debounceTimer=setTimeout(()=>{searchTerm=e.target.value.trim();renderProducts()},300)};
+
+/* Checkout */
+document.querySelector('.cart-checkout').onclick=()=>{
+  if(!cart.items.length){toast('سبد خرید خالی است!');return}
+  toast('سفارش شما با موفقیت ثبت شد!');
+  cart.items=[];cart.save();cart.render();closeCart();
+};
+
+/* Toast with limit */
+function toast(msg){
+  const box=document.getElementById('toastBox');
+  const existing=box.querySelectorAll('.toast:not(.out)');
+  if(existing.length>=3){existing[0].classList.add('out');setTimeout(()=>existing[0].remove(),300)}
+  const el=document.createElement('div');el.className='toast';el.textContent=msg;box.appendChild(el);
+  setTimeout(()=>{el.classList.add('out');setTimeout(()=>el.remove(),300)},2000);
+}
+
+/* ESC Key */
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    if(document.getElementById('cartSidebar').classList.contains('open'))closeCart();
+    if(document.getElementById('torobModal').classList.contains('open'))closeTorobModal();
+  }
+});
 
 renderProducts();
 cart.render();
